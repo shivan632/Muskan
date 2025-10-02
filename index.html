@@ -832,6 +832,32 @@
             line-height: 1.6;
         }
 
+        /* Download notification */
+        .download-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 3000;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content {
@@ -942,6 +968,11 @@
     <!-- Background Animation -->
     <div id="vanta-bg"></div>
 
+    <!-- Download Notification -->
+    <div class="download-notification" id="downloadNotification">
+        <i class="fas fa-check-circle"></i> Resume downloaded successfully!
+    </div>
+
     <!-- Certificate Modal -->
     <div class="modal" id="certificateModal">
         <div class="modal-content">
@@ -974,6 +1005,7 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#certificates-resume">Certificate & Resume</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -1072,7 +1104,7 @@
             </div>
             
             <!-- Certificates & Resume Section -->
-            <div class="certificates-resume">
+            <div class="certificates-resume" id="certificates-resume">
                 <h3>Certificates & Resume</h3>
                 <div class="cr-container">
                     <div class="certificates">
@@ -1090,28 +1122,28 @@
                         <div class="certificate-gallery">
                             <div class="certificate-item" onclick="openCertificate('Java Certification', 'This certification validates my expertise in Java programming language, covering core concepts, object-oriented programming, and advanced features.', 'Oracle', 'June 2022', 'https://via.placeholder.com/300x200/6c63ff/ffffff?text=Java+Cert')">
                                 <div class="certificate-img">
-                                    <img src="Prakarsh.jpg" alt="Java Certification">
+                                    <img src="Shivan Mishra HackTheMountain.jpeg" alt="Java Certification">
                                 </div>
                                 <h5>Java Certification</h5>
                                 <p>Oracle</p>
                             </div>
                             <div class="certificate-item" onclick="openCertificate('AWS Developer', 'This certification demonstrates my ability to develop and maintain applications on the AWS platform.', 'Amazon Web Services', 'March 2023', 'https://via.placeholder.com/300x200/4a44c9/ffffff?text=AWS+Cert')">
                                 <div class="certificate-img">
-                                    <img src="Prakarsh.jpg" alt="AWS Certification">
+                                    <img src="Shivan Mishra HackTheMountain.jpeg" alt="AWS Certification">
                                 </div>
                                 <h5>AWS Developer</h5>
                                 <p>Amazon Web Services</p>
                             </div>
                             <div class="certificate-item" onclick="openCertificate('Python Programming', 'This certification validates my skills in Python programming, including data structures, algorithms, and application development.', 'Python Institute', 'January 2023', 'https://via.placeholder.com/300x200/ff6584/ffffff?text=Python+Cert')">
                                 <div class="certificate-img">
-                                    <img src="Prakarsh.jpg" alt="Python Certification">
+                                    <img src="Shivan Mishra HackTheMountain.jpeg" alt="Python Certification">
                                 </div>
                                 <h5>Python Programming</h5>
                                 <p>Python Institute</p>
                             </div>
                             <div class="certificate-item" onclick="openCertificate('Azure Developer', 'This certification demonstrates my expertise in designing, building, testing, and maintaining cloud applications and services on Microsoft Azure.', 'Microsoft', 'September 2022', 'https://via.placeholder.com/300x200/6c63ff/ffffff?text=Azure+Cert')">
                                 <div class="certificate-img">
-                                    <img src="Prakarsh.jpg" alt="Azure Certification">
+                                    <img src="Shivan Mishra HackTheMountain.jpeg" alt="Azure Certification">
                                 </div>
                                 <h5>Azure Developer</h5>
                                 <p>Microsoft</p>
@@ -1120,10 +1152,9 @@
                     </div>
                     <div class="resume">
                         <h4>Resume</h4>
-                        <p>Download my resume to learn more about my experience, education, and skills in detail.</p>
+                        <p>View my resume to learn more about my experience, education, and skills in detail.</p>
                         <div class="resume-actions">
-                            <a href="SHIVAN-Resume.pdf" class="btn" id="downloadResume"><i class="fas fa-download"></i> Download PDF</a>
-                            <a href="SHIVAN-Resume.pdf" class="btn btn-outline" id="viewResume"><i class="fas fa-eye"></i> View Online</a>
+                            <a href="Prakarsh_Chauhan_Resume.pdf" class="btn" id="viewResume"><i class="fas fa-eye"></i> View Online</a>
                         </div>
                         
                         <div style="margin-top: 30px; padding: 20px; background-color: rgba(15, 15, 26, 0.7); border-radius: 10px;">
@@ -1152,42 +1183,42 @@
                 <div class="skill-card">
                     <div class="skill-icon">
                         <!-- Replace with actual skill icon -->
-                        <i class="fas fa-c"></i>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Programming">
                     </div>
                     <h3>C Programming</h3>
                     <p>Strong foundation in C with experience in system programming, algorithms, and data structures implementation.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fas fa-r"></i>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
                     </div>
-                    <h3>R Language</h3>
+                    <h3>C++</h3>
                     <p>Object-oriented programming expertise with C++, including STL, templates, and performance optimization.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fab fa-java"> </i>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
                     </div>
                     <h3>Java</h3>
                     <p>Enterprise application development using Java, Spring Framework, and multithreading concepts.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fab fa-js-square"></i>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
                     </div>
                     <h3>JavaScript</h3>
                     <p>Frontend and backend development with JavaScript, including React, Node.js, and modern ES6+ features.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fab fa-python"></i>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
                     </div>
                     <h3>Python</h3>
                     <p>Data analysis, machine learning, and automation scripts using Python with libraries like Pandas, NumPy, and TensorFlow.</p>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fas fa-microchip"></i>
+                        <img src="data:image/png;base64,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" alt="Assembly">
                     </div>
                     <h3>Assembly Language</h3>
                     <p>Low-level programming experience with x86 and ARM assembly for embedded systems and performance-critical applications.</p>
@@ -1281,7 +1312,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Location</h4>
-                            <p>New Delhi, India</p>
+                            <p>Prayagraj, India</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1441,18 +1472,38 @@
         // Resume Download Functionality
         document.getElementById('downloadResume').addEventListener('click', function(e) {
             e.preventDefault();
-            // Create a simple PDF download simulation
-            alert('Your resume is being downloaded...');
-            // In a real implementation, you would link to an actual PDF file
-            // window.open('path/to/your/resume.pdf', '_blank');
+            
+            // Create a Blob with the PDF content
+            const blob = new Blob([pdfContent], { type: 'application/pdf' });
+            
+            // Create a download link
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Prakarsh_Chauhan_Resume.pdf';
+            
+            // Trigger the download
+            document.body.appendChild(a);
+            a.click();
+            
+            // Clean up
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Show download notification
+            const notification = document.getElementById('downloadNotification');
+            notification.style.display = 'block';
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
         });
 
         document.getElementById('viewResume').addEventListener('click', function(e) {
             e.preventDefault();
-            // Create a simple resume view simulation
-            alert('Opening resume in a new tab...');
-            // In a real implementation, you would open the PDF in a new tab
-            // window.open('path/to/your/resume.pdf', '_blank');
+            // Open resume in a new tab
+            window.open('Prakarsh_Chauhan_Resume.pdf', '_blank');
         });
 
         // Certificate Modal Functionality
